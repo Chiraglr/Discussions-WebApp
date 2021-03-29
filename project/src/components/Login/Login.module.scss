@@ -1,0 +1,9 @@
+.login {
+    height: 100vh;
+    // background: linear-gradient(to right, rgba(16,30,224,0.9), rgba(16,30,224,0.7));;
+}
+@media only screen and (max-width: 575px){
+    .title {
+        font-size: 30px;
+    }
+}

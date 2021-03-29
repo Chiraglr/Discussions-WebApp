@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import AuthService from './utils/ApiUtils/AuthService';
+import DashboardUI from './components/Dashboard/DashboardUI';
+import Login from './components/Login/Login';
+class App extends Component {
+  constructor(props){
+    super(props);
+    AuthService.initializeValidUsers();
+    this.state = {
+      isLoggedIn: AuthService.isAuthenticated()
+    }
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  onLogin = () => {
+    this.setState({ isLoggedIn: AuthService.isAuthenticated() });
+  }
+
+  render(){
+    return (
+      <Router>
+        <Switch>
+          {this.state.isLoggedIn && <Route path="/" component={DashboardUI} />}
+          <Route exact path="/" render={() => <Login onLogin={this.onLogin} />} />
+          <Route path="*" render={() => <Redirect to="/" />} />
+        </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;

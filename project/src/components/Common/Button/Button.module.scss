@@ -1,0 +1,29 @@
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    // letter-spacing: 1px;
+    line-height: 18px;
+    white-space: normal;
+  
+    &:disabled {
+      cursor: not-allowed;
+    }
+}
+
+.parent {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading {
+    border: 3px solid #0e65d7;
+    border-radius: 50%;
+    border-top: 3px solid rgb(174, 206, 248);
+    width: 18px;
+    height: 18px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+}

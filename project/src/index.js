@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './styles/_typography.scss';
+import './styles/_cards.scss';
+import './styles/_backgrounds.scss';
+import './styles/_common.scss';
 
 ReactDOM.render(
   <React.StrictMode>
