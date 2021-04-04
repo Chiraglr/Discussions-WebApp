@@ -11,6 +11,14 @@ class AuthService {
             {
                 userName: 'Abhinay',
                 password: '456'
+            },
+            {
+                userName: 'Ravi',
+                password: '@#$sdkfj'
+            },
+            {
+                userName: 'Ramulu',
+                password: '9870sdf'
             }
         ]);
     }
