@@ -13,40 +13,47 @@ function DashboardUI(props) {
     function logout() {
         AuthService.logout();
     }
+
     return <>
-        <div className={`w-100 d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center px-4 py-3 bg-white ${styles.header}`}>
-            <div className="d-flex align-items-center mb-3 mb-sm-0">
+        <nav className={`w-100 fixed-top d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center px-4 py-3 ${styles.header} bg-dark`}>
+            <div className="d-flex align-items-center mb-3 mb-sm-0 text-white">
                 <FontAwesomeIcon
                     icon={faCommentAlt}
                     onClick={() => props.history.push('/')}
-                    size="4x"
+                    size="2x"
                     className="pointer"
                 />
-                <h1 className={`px-3 ${styles.title}`}>
+                <p className={`px-3 fs-20 fw-600 m-0 ${styles.title}`}>
                     Discussion Village
-                </h1>
+                </p>
             </div>
-            <div className="d-flex align-items-center">
-                <h4 className="m-0 mr-3">
+            <div className="d-flex align-items-end">
+                <p className="m-0 fs-18 fw-600 mr-3 text-white">
                     Hi, {userName}
-                </h4>
+                </p>
                 <Button
                     className="darkBlue text-white"
                     onClick={logout}
                 >
-                    <h4 className="align-self-end pointer m-0">
+                    <p className="align-self-end pointer m-0 fs-18 fw-600">
                         Logout
-                    </h4>
+                    </p>
                 </Button>
             </div>
-        </div>
+        </nav>
         <Switch>
-            <Route exact path="/" component={Dashboard} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/discussions/:id" component={Discussions} />
-            <Route path="*" render={() => <Redirect to="/" />} />
+            <PrivateRoute exact path="/dashboard/:id*" component={Dashboard} />
+            <PrivateRoute exact path="/discussions/:id" component={Discussions} />
+            <PrivateRoute path="*" render={() => <Redirect to="/dashboard" />} />
         </Switch>
     </>;
+}
+
+
+function PrivateRoute(props){
+    return <div className="pt-5 mt-sm-4 mt-5">
+        <Route {...props} />
+    </div>
 }
 
 export default withRouter(DashboardUI);

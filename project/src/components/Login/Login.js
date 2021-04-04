@@ -48,14 +48,14 @@ function Login(props){
 
     return <div className={styles.login}>
         <div className={`row no-gutters justify-content-center`}>
-            <div className={`col-12 d-flex align-items-center px-4 py-3 bg-white`}>
+            <div className={`col-12 d-flex align-items-center px-4 py-3 bg-white ${styles.loginHeader}`}>
                 <FontAwesomeIcon
                     icon={faCommentAlt}
-                    size="4x"
+                    size="2x"
                 />
-                <h1 className={`px-3 ${styles.title}`}>
+                <p className={`px-3 fs-20 fw-600 m-0 ${styles.title}`}>
                     Discussion Village
-                </h1>
+                </p>
             </div>
             <CardPrimary
                 className="col-8 col-lg-6 col-xl-5 p-3 mt-5 bg-grey"
@@ -74,7 +74,7 @@ function Login(props){
                                         name="username"
                                         onChange={onChange}
                                         value={userName}
-                                        className="mt-1 w-100"
+                                        className="mt-1 w-100 p-1 border-radius-8"
                                         type="text"
                                         placeholder="username"
                                         required
@@ -87,7 +87,7 @@ function Login(props){
                             <div className="mb-3">
                                 <div>
                                     <input
-                                        className="w-100"
+                                        className="w-100 p-1 border-radius-8"
                                         name="password"
                                         onChange={onChange}
                                         value={password}

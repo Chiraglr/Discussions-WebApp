@@ -1,3 +1,23 @@
 .details {
     border-bottom: 1px solid #d6d6d6;
 }
+.arrowUp {
+    vertical-align: top;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;    
+    border-bottom: 5px solid black;
+    font-size: 4px;
+}
+.arrowDown {
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;    
+    border-top: 5px solid black;
+    font-size: 0px;
+}
+.loadComments:hover,.loadComments:focus,.loadComments:active {
+    background-color: #ebeff0;
+}

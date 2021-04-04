@@ -1,0 +1,27 @@
+.modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0.5;
+    background-color: black;
+}
+.modal {
+    z-index: 101;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal_body {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: white;
+    width: max-content;
+    margin: 147px auto;
+}
