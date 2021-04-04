@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import AuthService from './utils/ApiUtils/AuthService';
 import DashboardUI from './components/Dashboard/DashboardUI';
 import Login from './components/Login/Login';
+
 class App extends Component {
   constructor(props){
     super(props);
